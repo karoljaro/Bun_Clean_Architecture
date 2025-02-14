@@ -1,6 +1,9 @@
 {
   "name": "bun_clean_architecture",
   "module": "index.ts",
+  "scripts": {
+    "dev": "bun run index.ts"
+  },
   "devDependencies": {
     "@types/bun": "^1.2.2",
     "prettier": "3.5.1"
@@ -8,5 +11,8 @@
   "peerDependencies": {
     "typescript": "^5.7.3"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "consola": "^3.4.0"
+  }
 }
