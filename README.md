@@ -67,7 +67,7 @@ curl -X GET http://localhost:3000/users
 ```json
 [
     {
-        "id": "1",
+        "id": "0195064d-8f2a-74f6-a3d1-6c08b6791724",
         "name": "John Doe",
         "email": "john.doe@example.com"
     }
@@ -90,7 +90,6 @@ curl -X POST http://localhost:3000/users \
 
 ```json
 {
-    "id": "1",
     "name": "John Doe",
     "email": "john.doe@example.com"
 }
