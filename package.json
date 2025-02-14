@@ -1,16 +1,12 @@
 {
   "name": "bun_clean_architecture",
   "module": "index.ts",
-  "type": "module",
   "devDependencies": {
-    "@types/bun": "latest",
+    "@types/bun": "^1.2.2",
     "prettier": "3.5.1"
   },
   "peerDependencies": {
-    "typescript": "^5.0.0"
+    "typescript": "^5.7.3"
   },
-  "dependencies": {
-    "@types/express": "^5.0.0",
-    "express": "^4.21.2"
-  }
+  "type": "module"
 }
