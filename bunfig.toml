@@ -1,0 +1,6 @@
+[default]
+entrypoint = "src/main.ts"
+testEntryPoint = "tests/**/*.test.ts"
+
+[test]
+root = "./tests"

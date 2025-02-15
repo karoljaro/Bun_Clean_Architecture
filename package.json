@@ -1,8 +1,10 @@
 {
   "name": "bun_clean_architecture",
-  "module": "index.ts",
+  "version": "1.0.0",
+  "main": "src/main.ts",
   "scripts": {
-    "dev": "bun run index.ts"
+    "dev": "bun run src/main.ts",
+    "test": "bun test ./src/**/*.test.ts"
   },
   "devDependencies": {
     "@types/bun": "^1.2.2",
