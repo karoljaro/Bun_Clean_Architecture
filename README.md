@@ -7,29 +7,49 @@ Ten projekt jest przykładowym REST API napisanym w Bun.js z użyciem zasad Clea
 ## Struktura katalogów
 
 ```
-src/
-├── entities/          # Klasy domenowe
-│   └── User.ts
-├── useCases/          # Logika biznesowa
-│   └── UserUseCase.ts
-├── controllers/       # Kontrolery HTTP
-│   └── UserControllers.ts
-├── routes/            # Definicje tras
-│   └── UserRoutes.ts
-├── repositories/      # Repozytoria danych
-│   └── UserRepository.ts
-└── index.ts           # Główny plik uruchamiający serwer
-tests/                 # Testy jednostkowe i integracyjne
-├── entities/
-│   └── User.test.ts
-├── useCases/
-│   └── UserUseCase.test.ts
-├── controllers/
-│   └── UserControllers.test.ts
-├── routes/
-│   └── UserRoutes.test.ts
-├── repositories/
-│   └── UserRepository.test.ts
+Bun_Clean_Architecture/
+│
+├── src/
+│   ├── entities/
+│   │   └── User.ts
+│   │
+│   ├── usecases/
+│   │   ├── CreateUser/
+│   │   │   ├── CreateUser.ts
+│   │   │   ├── CreateUserRequest.ts
+│   │   │   └── CreateUserResponse.ts
+│   │   │
+│   │   └── GetAllUsers/
+│   │       ├── GetAllUsers.ts
+│   │       └── GetAllUsersResponse.ts
+│   │
+│   ├── repositories/
+│   │   └── IUserRepository.ts
+│   │
+│   ├── adapters/
+│   │   ├── controllers/
+│   │   │   └── UserController.ts
+│   │   ├── gateways/
+│   │   │   └── InMemoryUserRepository.ts
+│   │   └── presenters/
+│   │       └── UserPresenter.ts
+│   │
+│   ├── frameworks/
+│   │   └── BunServer.ts
+│   │
+│   └── main.ts
+│
+├── tests/
+│   ├── usecases/
+│   │   ├── CreateUser.test.ts
+│   │   └── GetAllUsers.test.ts
+│   └── repositories/
+│       └── InMemoryUserRepository.test.ts
+│
+├── package.json
+├── tsconfig.json
+├── bunfig.toml
+└── .prettierrc
 ```
 
 ## Instalacja
@@ -65,13 +85,15 @@ curl -X GET http://localhost:3000/users
 **Przykład odpowiedzi:**
 
 ```json
-[
+{
+  "users": [
     {
-        "id": "0195064d-8f2a-74f6-a3d1-6c08b6791724",
-        "name": "John Doe",
-        "email": "john.doe@example.com"
+      "userId": "0195075c-22df-7000-bb08-b6a3a88a1c97",
+      "userName": "John Doe",
+      "userEmail": "john.doe@example.com"
     }
-]
+  ]
+}
 ```
 
 ### POST /users
