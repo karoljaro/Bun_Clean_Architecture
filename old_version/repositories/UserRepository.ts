@@ -1,5 +1,6 @@
 import { randomUUIDv7 } from "bun";
 import User from "../entities/User";
+import type IUserRepository from "./IUserRepository";
 
 export default class UserRepository {
     private users: User[] = []; // Tymczasowa "baza danych" w pamięci

@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach } from "bun:test";
-import UserUseCase from "../../src/useCases/UserUseCase";
+import UserUseCase from "../../useCases/UserUseCase";
 import UserRepository from "../../src/repositories/UserRepository";
-import User from "../../src/entities/User";
+import User from "../../../src/entities/User";
 
 describe("User useCase", () => {
     let userUseCase: UserUseCase;

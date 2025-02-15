@@ -1,25 +1,19 @@
-import consola from "consola";
-import UserController from "../controllers/UserControllers";
+import { UserController } from "../adapters/controllers/UserController";
 
 const userController = new UserController();
 
-export const routes = async (req: Request): Promise<Response> => {
-    consola.info(`Handling request: ${req.method} ${req.url}`);
-    const url = new URL(req.url, `http://${req.headers.get("host")}`)
+export const UserRoutes = async (req: Request): Promise<Response> => {
+    const url = new URL(req.url);
+    const method = req.method;
+    const path = url.pathname;
 
-    // GET /users
-    if (req.method === "GET" && url.pathname === "/users") {
-        consola.info("GET /users route matched");
-        return userController.getAllUsers(req);
+    if (method === "POST" && path === "/users") {
+        return userController.createUserHandler(req);
     }
 
-    // POST /users
-    if (req.method === "POST" && url.pathname === "/users") {
-        consola.info("POST /users route matched");
-        return userController.createUser(req);
+    if (method === "GET" && path === "/users") {
+        return userController.getAllUsersHandler();
     }
 
-    // NOT FOUND
-    consola.error("Route not found");
     return new Response("Not Found", { status: 404 });
-};
+}

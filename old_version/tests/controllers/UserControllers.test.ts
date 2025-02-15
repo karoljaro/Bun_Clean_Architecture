@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach } from "bun:test";
-import UserController from "../../src/controllers/UserControllers";
-import UserUseCase from "../../src/useCases/UserUseCase";
+import UserController from "../../controllers/UserControllers";
+import UserUseCase from "../../useCases/UserUseCase";
 
 describe("User Controller", () => {
     let userController: UserController;

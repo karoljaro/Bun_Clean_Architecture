@@ -1,6 +1,6 @@
 import { describe, it, expect } from "bun:test";
 import { randomUUIDv7 } from "bun";
-import User from "../../src/entities/User";
+import User from "../../../src/entities/User";
 
 describe("User Entity", () => {
     it("Should create a new User with given id, name and email", () => {
