@@ -1,3 +1,4 @@
+import type IUserRepository from "../../repositories/IUserRepository";
 import { CreateUser } from "../../usecases/CreateUser/CreateUser";
 import { CreateUserRequest } from "../../usecases/CreateUser/CreateUserRequest";
 import { GetAllUsers } from "../../usecases/GetAllUsers/GetAllUsers";
@@ -9,9 +10,7 @@ export class UserController {
     private getAllUsers: GetAllUsers;
     private userPresenter: UserPresenter;
 
-    constructor() {
-        // ==============[Gateways]==============
-        const userRepository = new InMemoryUserRepository();
+    constructor(userRepository: IUserRepository = new InMemoryUserRepository()) {
         // ==============[Usecases]==============
         this.createUser = new CreateUser(userRepository);
         this.getAllUsers = new GetAllUsers(userRepository);
