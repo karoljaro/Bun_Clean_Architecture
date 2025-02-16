@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeAll, beforeEach } from "bun:test";
+import { describe, it, expect, beforeEach } from "bun:test";
 import { UserController } from "../../../src/adapters/controllers/UserController";
 import { InMemoryUserRepository } from "../../../src/adapters/gateways/InMemoryUserRepository";
 import User from "../../../src/entities/User";
