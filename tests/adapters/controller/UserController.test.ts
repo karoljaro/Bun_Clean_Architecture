@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeAll } from "bun:test";
+import { describe, it, expect, beforeAll, beforeEach } from "bun:test";
 import { UserController } from "../../../src/adapters/controllers/UserController";
 import { InMemoryUserRepository } from "../../../src/adapters/gateways/InMemoryUserRepository";
 import User from "../../../src/entities/User";
@@ -7,7 +7,7 @@ describe("UserController", () => {
     let userController: UserController;
     let userRepository: InMemoryUserRepository;
 
-    beforeAll(() => {
+    beforeEach(() => {
         userRepository = new InMemoryUserRepository();
         userController = new UserController(userRepository);
     });
@@ -38,8 +38,6 @@ describe("UserController", () => {
 
         const response = await userController.getAllUsersHandler();
         const body = await response.json();
-
-        console.log(body);
 
         expect(response.status).toBe(200);
         expect(Array.isArray(body.users)).toBe(true);
