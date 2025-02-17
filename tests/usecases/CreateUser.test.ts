@@ -1,7 +1,8 @@
 import { describe, it, expect } from "bun:test";
-import { InMemoryUserRepository } from "../../src/adapters/gateways/InMemoryUserRepository";
-import { CreateUser } from "../../src/usecases/CreateUser/CreateUser";
-import { CreateUserRequest } from "../../src/usecases/CreateUser/CreateUserRequest";
+import { InMemoryUserRepository } from "../../src/infrastructure/repositories/InMemoryUserRepository";
+import { CreateUserRequest } from "../../src/application/usecases/CreateUser/CreateUserRequest";
+import { CreateUser } from "../../src/application/usecases/CreateUser/CreateUser";
+
 
 describe("CreateUser", () => {
     it("Should create a new user", async () => {

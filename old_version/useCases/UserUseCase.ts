@@ -1,4 +1,4 @@
-import type User from "../../src/entities/User";
+import type User from "../../src/domain/entities/User";
 import UserRepository from "../repositories/UserRepository";
 
 export default class UserUseCase {

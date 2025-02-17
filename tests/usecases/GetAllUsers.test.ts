@@ -1,7 +1,7 @@
 import { describe, it, expect } from "bun:test";
-import { InMemoryUserRepository } from "../../src/adapters/gateways/InMemoryUserRepository";
-import User from "../../src/entities/User";
-import { GetAllUsers } from "../../src/usecases/GetAllUsers/GetAllUsers";
+import { InMemoryUserRepository } from "../../src/infrastructure/repositories/InMemoryUserRepository";
+import User from "../../src/domain/entities/User";
+import { GetAllUsers } from "../../src/application/usecases/GetAllUsers/GetAllUsers"; 
 
 describe("GetAllUsers", () => {
     it("should get all users", async () => {

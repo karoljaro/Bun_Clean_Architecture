@@ -1,8 +1,9 @@
 import { randomUUIDv7 } from "bun";
-import User from "../../entities/User";
-import type IUserRepository from "../../repositories/IUserRepository";
+
 import type { CreateUserRequest } from "./CreateUserRequest";
 import { CreateUserResponse } from "./CreateUserResponse";
+import User from "../../../domain/entities/User";
+import type IUserRepository from "../../repositories/IUserRepository";
 
 export class CreateUser {
     constructor(private userRepository: IUserRepository) {}

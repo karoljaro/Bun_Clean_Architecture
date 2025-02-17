@@ -1,4 +1,4 @@
-import { UserController } from "../adapters/controllers/UserController";
+import { UserController } from "../../presentation/controllers/UserController";
 
 const userController = new UserController();
 

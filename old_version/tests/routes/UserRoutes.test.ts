@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach, spyOn } from "bun:test";
 import UserController from "../../controllers/UserControllers";
-import { routes } from "../../../src/routes/UserRoutes";
+import { routes } from "../../../src/infrastructure/routes/UserRoutes";
 
 class MockUserController extends UserController {
     async getAllUsers(req: Request): Promise<Response> {

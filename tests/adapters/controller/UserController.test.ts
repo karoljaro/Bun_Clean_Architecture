@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach } from "bun:test";
-import { UserController } from "../../../src/adapters/controllers/UserController";
-import { InMemoryUserRepository } from "../../../src/adapters/gateways/InMemoryUserRepository";
-import User from "../../../src/entities/User";
+import { UserController } from "../../../src/presentation/controllers/UserController";
+import { InMemoryUserRepository } from "../../../src/infrastructure/repositories/InMemoryUserRepository";
+import User from "../../../src/domain/entities/User";
 
 describe("UserController", () => {
     let userController: UserController;

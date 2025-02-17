@@ -1,5 +1,5 @@
-import type { CreateUserResponse } from "../../usecases/CreateUser/CreateUserResponse";
-import type { GetAllUsersResponse } from "../../usecases/GetAllUsers/GetAllUsersResponse";
+import type { CreateUserResponse } from "../../application/usecases/CreateUser/CreateUserResponse";
+import type { GetAllUsersResponse } from "../../application/usecases/GetAllUsers/GetAllUsersResponse";
 
 export class UserPresenter {
     presentCreateUser(response: CreateUserResponse): any {

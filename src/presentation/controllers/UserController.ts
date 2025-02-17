@@ -1,8 +1,9 @@
-import type IUserRepository from "../../repositories/IUserRepository";
-import { CreateUser } from "../../usecases/CreateUser/CreateUser";
-import { CreateUserRequest } from "../../usecases/CreateUser/CreateUserRequest";
-import { GetAllUsers } from "../../usecases/GetAllUsers/GetAllUsers";
-import { InMemoryUserRepository } from "../gateways/InMemoryUserRepository";
+import { CreateUser } from "../../application/usecases/CreateUser/CreateUser";
+import { CreateUserRequest } from "../../application/usecases/CreateUser/CreateUserRequest";
+import { GetAllUsers } from "../../application/usecases/GetAllUsers/GetAllUsers";
+import type IUserRepository from "../../application/repositories/IUserRepository";
+
+import { InMemoryUserRepository } from "../../infrastructure/repositories/InMemoryUserRepository";
 import { UserPresenter } from "../presenters/UserPresenter";
 
 export class UserController {
@@ -19,7 +20,7 @@ export class UserController {
     }
 
     // -------------------------------[Handlers]-------------------------------
-    
+
     // =============={ Create }==============
     async createUserHandler(req: Request): Promise<Response> {
         try {

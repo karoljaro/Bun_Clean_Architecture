@@ -1,5 +1,5 @@
 import consola from "consola";
-import { UserRoutes } from "../routes/UserRoutes";
+import { UserRoutes } from "./routes/UserRoutes";
 
 Bun.serve({
     fetch: UserRoutes,

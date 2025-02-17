@@ -1,6 +1,6 @@
 import { describe, it, expect } from "bun:test";
-import { InMemoryUserRepository } from "../../src/adapters/gateways/InMemoryUserRepository";
-import User from "../../src/entities/User";
+import { InMemoryUserRepository } from "../../src/infrastructure/repositories/InMemoryUserRepository";
+import User from "../../src/domain/entities/User";
 
 describe("InMemoryUserRepository", () => {
     it("should find all users", async () => {
